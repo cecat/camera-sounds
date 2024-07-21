@@ -2,6 +2,8 @@
 CeC
 July 2024
 
+# This is under development - not even a beta yet - nothing to see here...
+
 Analyze sound characteristics from microphones on remote cameras 
 to detect sound types (conversations, music, lawnmower). The add-on
 does not keep recordings nor can it detect what is being said - it is
