@@ -1,7 +1,7 @@
 {
   "name": "Camera Sounds Local",
   "description": "Extract audio characteristics from camera mics via RTSP streams to detect sound types (conversation, lawnmower, etc.)",
-  "version": "1.f.6",
+  "version": "1.2.5",
   "slug": "camera-sounds-local",
   "init": false,
   "arch": [
@@ -21,4 +21,3 @@
   ],
   "url": "https://github.com/cecat/CeC-HA-Addons/tree/main/addons/camera-sounds"
 }
-

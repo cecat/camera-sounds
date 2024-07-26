@@ -1,23 +1,47 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+# Stage 1: Build environment
+FROM python:3.12-slim AS builder
+WORKDIR /app
 
-# Install basic dependencies and build tools
-RUN apk add --no-cache ffmpeg python3 py3-pip build-base musl-dev gcc libsndfile-dev pkgconfig python3-dev
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    libsndfile1 \
+    && rm -rf /var/lib/apt/lists/*
 
 # Create a virtual environment
-RUN python3 -m venv /venv
-RUN /venv/bin/pip install --upgrade pip
+RUN python -m venv /opt/venv
 
-# Install Python packages separately to identify issues
-RUN /venv/bin/pip install --upgrade paho-mqtt
-RUN /venv/bin/pip install --upgrade PyYAML
-RUN /venv/bin/pip install --upgrade librosa
-RUN /venv/bin/pip install --upgrade soundfile
+# Activate virtual environment and install Python dependencies
+ENV PATH="/opt/venv/bin:$PATH"
+RUN pip install --no-cache-dir \
+    librosa \
+    paho-mqtt \
+    pyyaml \
+    numpy
 
-# Copy data for add-on
-COPY run.sh /
-COPY get_mfcc.py /
-RUN chmod a+x /run.sh
+# Copy add-on code
+COPY . .
 
-CMD [ "/run.sh" ]
+# Stage 2: Final image
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    libsndfile1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy virtual environment from builder stage
+COPY --from=builder /opt/venv /opt/venv
+
+# Copy necessary files from builder stage
+COPY --from=builder /app /app
+
+# Activate virtual environment
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Set entrypoint
+CMD ["python", "get_mfcc.py"]
 
