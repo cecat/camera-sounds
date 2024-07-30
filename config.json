@@ -1,7 +1,7 @@
 {
   "name": "Camera Sounds Local",
   "description": "Extract audio characteristics from camera mics via RTSP streams to detect sound types (conversation, lawnmower, etc.)",
-  "version": "1.2.5",
+  "version": "1.1.5",
   "slug": "camera-sounds-local",
   "init": false,
   "arch": [

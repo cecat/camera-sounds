@@ -1,5 +1,65 @@
 # Changelog
 
+## 1.1.5
+- this version seems to work... mqtt strangeness seems to be fixed
+
+## 1.1.4
+- fix an error ChatGPT introduced, ugh
+
+## 1.1.3
+- fix an error ChatGPT introduced, ugh
+
+## 1.1.2
+- more fixes
+
+## 1.1.1
+- modify with lessons from a working code
+
+## 1.1.0
+- again...
+
+## 1.2.j
+- again...
+
+## 1.2.i
+- again...
+
+## 1.2.h
+- fiddling with mqtt connect params to see if we can get connections to stay up
+
+## 1.2.g
+- another try
+
+## 1.2.f
+- three forward, two back...
+
+## 1.2.e
+- getting there ... maybe
+
+## 1.2.d
+- still pushing the paho-mqtt rock up this hill
+
+## 1.2.c
+- more updates to the  paho-mqtt calls/logic to comply with v2
+
+## 1.2.b
+- updated paho-mqtt API with new return codes and assoc logic
+
+## 1.2.a
+- updated paho-mqtt API 
+
+## 1.2.9
+- another fix
+
+## 1.2.8
+- fix Dockerfile typo
+
+## 1.2.7
+- changes to try to comply with paho-mqtt v2
+
+## 1.2.6
+- added logging to diagnose a MQTT connection issue
+
 ## 1.2.5
 - fixed python errors
 
