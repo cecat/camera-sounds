@@ -1,8 +1,10 @@
 {
-  "name": "Camera Sounds Local",
-  "description": "Extract audio characteristics from camera mics via RTSP streams to detect sound types (conversation, lawnmower, etc.)",
+  "name": "CameraMFCC",
+  "description": "Extract audio characteristics
+                  (Mel-Frequency Cepstral Coefficients or MFCCs)from camera mics
+                  via RTSP streams using the Librosa library.)",
   "version": "1.1.5",
-  "slug": "camera-sounds-local",
+  "slug": "camera-sounds-mfcc",
   "init": false,
   "arch": [
     "aarch64",
