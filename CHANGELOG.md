@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.6
+- change name to avoid confusion w/ yamcam addon
+- mqtt issues have been colliding client names from multiple
+  addons using the same config file (where client name is part 
+  of the mqtt setup.
+
 ## 1.1.5
 - this version seems to work... mqtt strangeness seems to be fixed
 

@@ -1,9 +1,7 @@
 {
   "name": "CameraMFCC",
-  "description": "Extract audio characteristics
-                  (Mel-Frequency Cepstral Coefficients or MFCCs)from camera mics
-                  via RTSP streams using the Librosa library.)",
-  "version": "1.1.5",
+  "description": "Extract audio characteristics (Mel-Frequency Cepstral Coefficients or MFCCs) from camera mics via RTSP streams using the Librosa library.",
+  "version": "1.1.6",
   "slug": "camera-sounds-mfcc",
   "init": false,
   "arch": [
